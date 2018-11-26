@@ -1,0 +1,32 @@
+<html>
+
+<body>
+<a href = '{{url_for('newFounder', startup_id = startups.id) }}'>Create New Founder</a>
+<div>
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+</div>
+<h1>{{startups.name}}</h1>
+
+{% for i in founders %}
+
+<div>
+<p>{{i.name}}</p>
+<a href='{{url_for('editFounder',startup_id = startups.id, founder_id=i.id)}}' >Edit</a>
+<a href='{{url_for('deleteFounder', startup_id = startups.id, founder_id=i.id)}}' >Delete</a>
+</div>
+
+
+{% endfor %}
+</body>
+
+</html>

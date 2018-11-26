@@ -1,0 +1,26 @@
+<html>
+<head>
+	</head>
+<body>
+
+<h1>New Founder</h1>
+
+<div class = 'pane'>
+<form action="{{ url_for('newFounder', startup_id=startup_id )}}" method = 'post'>
+
+<dl>
+	<dt>Name:</dt>
+		<dd><input type ='text' size='30' name='name' required></dd>
+            <dt>Bio:</dt>
+                        <dd><textarea name = 'bio' rows='5' cols='40' required></textarea></dd>
+</dl>
+
+
+<input type='submit' value='Create'>
+
+</form>
+</div>
+
+</body>
+
+</html>
